@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Plat{% endblock %}
+
+{% block body %}
+    <h1>Create new Plat</h1>
+
+    {{ include('admin_plat/_form.html.twig') }}
+
+    {% if plat.categorie=='Soupe' %}
+    <h1>SOUPIOTE SVP !</h1>
+    {% endif %}
+
+    <a href="{{ path('app_admin_plat_index') }}">back to list</a>
+{% endblock %}

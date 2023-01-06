@@ -1,0 +1,10 @@
+/* On enlève les valeurs par défaut du navigateur*/
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* le header doit faire l'intégralité de la page visible sur mon écran*/

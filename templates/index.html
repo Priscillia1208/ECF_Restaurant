@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Le Développeur fou</title>
     <meta name="Description" content="Le Développeur Fou est un restaurant proposant une cuisine moléculaire aux mélanges savants et extravagants">
@@ -18,10 +18,43 @@
     <header>
 
     </header>
-
+    <!-- START header : création de la navbar. Utilisation aria current qui pointe sur la même page en cas d'utilisation de la scrollbar -->
     <nav class="navbar">
+        <a href="#" class="nav-icon" aria-label="visite-page-accueil" aria-current="page">
+            <img src="img/logo.jpg" alt="logo-restaurant">
+        </a>
+
+        <div class="main-navlinks">
+            <!-- bouton burger: utilisation aria expanded en false pour cacher le bouton-->
+            <button class="hamburger" type="button" aria-label="menu-navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navlinks-container">
+                <a href="#" aria-current="page">Accueil</a>
+                <a href="#" aria-label="Carte">Carte</a>
+                <a href="#" aria-label="Menus">Menus</a>
+            </div>
+        </div>
+
+        <div class="nav-authentification">
+            <a href="#" class ="user-toggler" aria-label="Sign-in-page">
+                <i class="fa-regular fa-user fa-lg"></i>
+            </a>
+            <div class="sign-buttons">
+                <button type="button" aria-label="bouton-connexion">Connexion</button>
+                <button type="button" aria-label="bouton-deconnexion">Déconnexion</button>
+            </div>
+
+        </div>
 
     </nav>
+
+
+    <script src="https://kit.fontawesome.com/70740cb780.js" crossorigin="anonymous"></script>
 
 </body>
 </html>

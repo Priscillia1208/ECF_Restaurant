@@ -95,4 +95,12 @@ class Table
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return 'Num: '. strval($this->numero).' '.'( nombre de couverts: ' .strval($this->nbPlaces).')';
+    }
+
+
 }
+

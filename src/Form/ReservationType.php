@@ -14,6 +14,7 @@ class ReservationType extends AbstractType
         $builder
             ->add('dateEtHeureArrivee')
             ->add('etat')
+            ->add('tables')
         ;
     }
 

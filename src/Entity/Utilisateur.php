@@ -32,7 +32,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     private $roles = [];
 
     /**
-     * @var string The hashed password
+     * @var string The hashed passwordr
      * @ORM\Column(type="string")
      */
     private $password;

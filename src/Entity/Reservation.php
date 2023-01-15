@@ -12,6 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Reservation
 {
+    const ETAT_CONFIRME = 'CONFIRME';
+    const ETAT_ANNULE = 'ANNULE';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -40,9 +43,15 @@ class Reservation
      */
     private $tables;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Allergene::class, mappedBy="reservations")
+     */
+    private $allergenes;
+
     public function __construct()
     {
         $this->tables = new ArrayCollection();
+        $this->allergenes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,6 +115,33 @@ class Reservation
     public function removeTable(Table $table): self
     {
         $this->tables->removeElement($table);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergene>
+     */
+    public function getAllergenes(): Collection
+    {
+        return $this->allergenes;
+    }
+
+    public function addAllergene(Allergene $allergene): self
+    {
+        if (!$this->allergenes->contains($allergene)) {
+            $this->allergenes[] = $allergene;
+            $allergene->addReservation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergene(Allergene $allergene): self
+    {
+        if ($this->allergenes->removeElement($allergene)) {
+            $allergene->removeReservation($this);
+        }
 
         return $this;
     }

@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Allergene;
 use App\Entity\Reservation;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,6 +25,9 @@ class ReservationType extends AbstractType
                     ]
             ])
             ->add('tables')
+            ->add('allergenes', EntityType::class, ['expanded'=> true, 'class'=> Allergene::class, 'multiple'=> true])
+            ->add('commentaire')
+            ->add('nomClient')
         ;
     }
 

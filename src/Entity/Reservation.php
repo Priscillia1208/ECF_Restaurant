@@ -34,7 +34,7 @@ class Reservation
 
     /**
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="reservations")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $utilisateur;
 
@@ -47,6 +47,16 @@ class Reservation
      * @ORM\ManyToMany(targetEntity=Allergene::class, mappedBy="reservations")
      */
     private $allergenes;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $commentaire;
+
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $nomClient;
 
     public function __construct()
     {
@@ -142,6 +152,30 @@ class Reservation
         if ($this->allergenes->removeElement($allergene)) {
             $allergene->removeReservation($this);
         }
+
+        return $this;
+    }
+
+    public function getCommentaire(): ?string
+    {
+        return $this->commentaire;
+    }
+
+    public function setCommentaire(?string $commentaire): self
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getNomClient(): ?string
+    {
+        return $this->nomClient;
+    }
+
+    public function setNomClient(string $nomClient): self
+    {
+        $this->nomClient = $nomClient;
 
         return $this;
     }

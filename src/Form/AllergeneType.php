@@ -13,7 +13,7 @@ class AllergeneType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('reservations')
+
         ;
     }
 

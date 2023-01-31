@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VisiteurController!{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Restaurant: Le Quai Antique</h1>
+    <div class="container p-5 mb-5">
+        <h2 class="display-6 mb-3 text-center">Nos plats</h2>
+        <div class="row">
+            <div class="col-12 col-md-8 mx-auto">
+
+                <!-- Carousel -->
+
+
+                <div class="carousel slide" id="carouselRestaurant" data-bs-ride="carousel"><!-- data-bs-ride
+            initialise le
+            carousel au chargement de la page-->
+
+                    <!-- On rajoute un bloc avec les boutons à gauche et à droite, ainsi que trois "indicateurs" en bas.  -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="0" class="active"
+                                aria-label="plat numéro un"></button>
+                        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="1"
+                                aria-current="true" aria-label="plat numéro deux"></button>
+                        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="2"
+                                aria-current="true" aria-label="plat numéro trois"></button>
+                        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="3"
+                                aria-label="plat numéro quatre"></button>
+                        <button type="button" data-bs-target="#carouselRestaurant" data-bs-slide-to="4"
+                                aria-label="plat numéro cinq"></button>
+                    </div>
+                    <!--CAROUSEL-->
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active descriptionText">
+                            <img src="img/food1.jpg" alt="carousel slide 1" class="d-block w-100">
+                            <div
+                                    class="carousel-caption d-none d-md-block text-white description">
+                                <h4>Feuilleté de saint-jacques et son jardin potager</h4>
+                                <p>Saint Jacques avec sauces crémeuse aux champignons accompagné de carottes, salades en provenance directe de nos producteurs locaux</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item descriptionText">
+                            <img src="img/food2b.jpg" alt="carousel slide 2" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block text-white description">
+                                <h4>Risotto à l'espagnol</h4>
+                                <p>Risotto sauce piment d'espelette accompagné de son chorizo espagnol</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item descriptionText">
+                            <img src="img/food3b.jpg" alt="carousel slide 3" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block text-white description">
+                                <h4>Canard grillé</h4>
+                                <p>Canard accompagné de ses batonnets de pomme de terre et de ses légumes frais, sauce
+                                    aux haricots rouges</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item descriptionText">
+                            <img src="img/food4.jpg" alt="carousel slide 4" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block text-white description">
+                                <h4>Le mignon en contemplation</h4>
+                                <p>Filet mignon nageant dans une sauce crémeuse au vin blanc du jura avec sa tartine croustillante betterave et fleurs du jardin</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item descriptionText">
+                            <img src="img/food4b.jpg" alt="carousel slide 5" class="d-block w-100">
+                            <div class="carousel-caption d-none d-md-block text-white description">
+                                <h4>Veau et sa suite potagère</h4>
+                                <p>Veau agrumes et salade</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurant"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurant"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

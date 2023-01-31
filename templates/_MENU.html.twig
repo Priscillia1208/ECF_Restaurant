@@ -1,0 +1,14 @@
+<nav>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_admin_formule_index') }}">Formules</a>
+        <a href="{{ path('app_admin_horaire_index') }}">Horaires</a>
+        <a href="{{ path('app_admin_image_index') }}">Images</a>
+        <a href="{{ path('app_admin_plat_index') }}">Plats</a>
+        <a href="{{ path('app_admin_reservation_index') }}">Reservation</a>
+        <a href="{{ path('app_admin_table_index') }}">Table</a>
+        <a href="{{ path('app_admin_allergene_index') }}">Allergenes</a>
+    {% endif %}
+    <a href="{{ path('app_register') }}">Inscription</a>
+    <a href="{{ path('app_login') }}">Connexion</a>
+    <a href="{{ path('app_logout') }}">Déconnexion</a>
+</nav>

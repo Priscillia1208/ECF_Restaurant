@@ -1,0 +1,17 @@
+img {
+    width: 100px;
+    height: 600px;
+}
+
+.description{
+    visibility: hidden;
+}
+
+.descriptionText:hover .description{
+    visibility: visible;
+    background-color: #1a1a00;
+    border: black 3px solid;
+    border-radius: 10px;
+}
+
+

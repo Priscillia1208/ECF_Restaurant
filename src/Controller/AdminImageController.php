@@ -35,6 +35,10 @@ class AdminImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $someNewFileName = uniqid() . 'jpg';
+            $file = $form['sourceImage']->getData();
+            $file->move('img-dynamique', $someNewFileName);
+            $image->setSourceImage($someNewFileName);
             $imageRepository->add($image, true);
 
             return $this->redirectToRoute('app_admin_image_index', [], Response::HTTP_SEE_OTHER);
@@ -65,6 +69,13 @@ class AdminImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            # Upload le fichier
+            $someNewFilename = uniqid() . '.jpg';
+            $file = $form['sourceImage']->getData();
+            $file->move('img-dynamique', $someNewFilename);
+
+            # Renomme et insert en BD
+            $image->setSourceImage($someNewFilename);
             $imageRepository->add($image, true);
 
             return $this->redirectToRoute('app_admin_image_index', [], Response::HTTP_SEE_OTHER);

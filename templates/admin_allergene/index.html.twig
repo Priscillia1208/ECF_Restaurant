@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1>Allergene index</h1>
+    <a href="{{ path('app_admin_allergene_new') }}">Créer</a>
 
     <table class="table">
         <thead>
@@ -19,8 +20,9 @@
                 <td>{{ allergene.id }}</td>
                 <td>{{ allergene.nom }}</td>
                 <td>
-                    <a href="{{ path('app_admin_allergene_show', {'id': allergene.id}) }}">show</a>
-                    <a href="{{ path('app_admin_allergene_edit', {'id': allergene.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_allergene_show', {'id': allergene.id}) }}">Résumé</a>
+                    <a href="{{ path('app_admin_allergene_edit', {'id': allergene.id}) }}">Modifier</a>
+                    {{ include('admin_allergene/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -31,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_allergene_new') }}">Create new</a>
+
 {% endblock %}

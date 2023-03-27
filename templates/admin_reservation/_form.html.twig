@@ -1,4 +1,15 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="row">
+    <div class="col-4">{{ form_row(form.nomClient) }}</div>
+    <div class="col-3">{{ form_row(form.dateEtHeureArrivee) }}</div>
+    <div class="col-2">{{ form_row(form.tables) }}</div>
+    <div class="col-3">{{ form_row(form.etat) }}</div>
+</div>
+<div class="row">
+    <div class="col-3">{{ form_row(form.allergenes) }}</div>
+    <div class="col-9">{{ form_row(form.commentaire) }}</div>
+
+
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+</div>
+    {{ form_end(form) }}

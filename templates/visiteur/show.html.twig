@@ -1,0 +1,79 @@
+{% extends 'base-visiteur.html.twig' %}
+
+{% block title %}Plat{% endblock %}
+
+{% block body %}
+
+    <!----------------SECTION CARTE-------------->
+
+    <div class="container-carte-menu">
+        <section class="section-carte">
+            <div class="item1">
+                <ul>
+                    <li><h3>Entrées</h3></li>
+                    {% for entree in entrees %}
+                    <li>{{ entree.nom ~ ' : ' ~ entree.prix ~ ' €' }}</li>
+                    <li class="description-plat">{{ entree.description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="item2">
+                <ul>
+                    <li><h3>Plats</h3></li>
+                    {% for plat in plats %}
+                    <li>{{ plat.nom ~ ' : ' ~ plat.prix ~ ' €'}}</li>
+                    <li class="description-plat">{{ plat.description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="item3">
+                <ul>
+                    <li><h3>Desserts</h3></li>
+                    {% for dessert in desserts %}
+                    <li>{{ dessert.nom ~ ' : ' ~ dessert.prix ~ ' €'}}</li>
+                    <li class="description-plat">{{ dessert.description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!----------------SECTION MENUS-------------->
+
+    <div class="container-carte-menu">
+        <section class="section-menu">
+            <div class="item1">
+                <ul>
+                    <li><h3>MENU CLASSIQUE (une entrée, un plat, un dessert) : 55€</h3></li>
+                    <li class="choix-menu">Entrées : </li>
+                    <li>Salade d’artichauts violets, topinambours et copeaux de parmesan</li>
+                    <li>King crabe et avocat</li>
+                    <li class="choix-menu">Plats : </li>
+                    <li>Dos de cabillaud vapeur, beurre de champignons et poireaux à la crème de cardamome</li>
+                    <li>Pot-au-feu de volaille à la truffe tuber melanosporum</li>
+                    <li class="choix-menu">Desserts : </li>
+                    <li>Finger chocolat, croustillant praliné</li>
+                    <li>Tarte fine croustillante aux pommes et glace miel</li>
+                </ul>
+            </div>
+
+
+            <div class="item2">
+                <ul>
+                    <li><h3>MENU DEGUSTATION: 80€</h3></li>
+                    <li class="choix-menu">Entrée: </li>
+                    <li>COQUILLES SAINT JACQUES "Saint Brieuc côtes Bretonnes" Fraîchement décoquillées / Asperges & Pois gourmand, Emulsion d'eau des coquillages</li>
+                    <li class="choix-menu">Plat : </li>
+                    <li>COMPRESSE DE PALERON longuement confit dans l'esprit " Boeuf - Carotte", Pommes de terre Agria / jus de daube réduit</li>
+                    <li class="choix-menu">Dessert : </li>
+                    <li>CREATIONS GOURMANDES : Desserts de notre carte</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+{% endblock %}

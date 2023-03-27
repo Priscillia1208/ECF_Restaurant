@@ -1,0 +1,511 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Hind Madurai, Arial, sans-serif;
+    background-color: #B6AC97;
+}
+
+/* --------------CREATION DU HEADER ET DE LA NAVBAR-------------- */
+
+.navigation {
+    font-family: Montserrat, sans-serif;
+    background-color: saddlebrown;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-item {
+    padding: 30px
+}
+
+.logo {
+    max-width: 100px;
+    max-height: 75px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+.lien-navigation a {
+    padding-right: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    color: floralwhite;
+    font-size: 23px;
+}
+
+.btn-reservation {
+    margin-right: 25px;
+    margin-left: 25px;
+    min-width: 100px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    color: floralwhite;
+    font-size: 23px;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: #906427;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --------------RESPONSIVE DU HEADER ET DE LA NAVBAR-------------- */
+
+@media screen and (min-width: 780px) and (max-width: 1120px){
+        .navigation {
+            flex-flow: row wrap;
+            max-height: 150px;
+    }
+        .lien-navigation {
+            padding: 10px;
+        }
+}
+
+@media(min-width:250px) and (max-width: 779px){
+    .navigation {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        max-height: 130px;
+    }
+    .logo {
+        margin-right: 2px;
+        margin-bottom: 3px;
+    }
+    .lien-navigation{
+       width: auto;
+        margin-left: 5px;
+        padding: 0;
+    }
+    .lien-navigation a {
+        font-size: 15px;
+    }
+    .btn-reservation {
+        font-size: 15px;
+        margin-top: 3px;
+    }
+}
+
+/* --------------SECTION PRESENTATION RESTAURANT-------------- */
+.container-section {
+    margin-top: 20px;
+}
+.titre {
+    color: black;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+}
+
+.niveau1 {
+    font-size: 70px;
+}
+
+.niveau2 {
+    font-size: 50px;
+}
+
+
+.valeurs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #906427;
+}
+
+.img-champs {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.valeurs ul {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.valeurs li{
+    padding: 10px;
+}
+
+.titre li {
+    font-size: 30px;
+}
+
+.titre li:first-child {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.img-panier {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+/* --------------SECTION RESPONSIVE PRESENTATION RESTAURANT-------------- */
+
+@media screen and (min-width: 780px) and (max-width: 1000px){
+    .presentation-restaurant {
+        flex-flow: row wrap;
+    }
+    .niveau1 {
+        font-size: 30px;
+    }
+    .niveau2 {
+        font-size: 25px;
+    }
+    .titre li {
+        font-size: 20px;
+    }
+    .img {
+        margin: 5px;
+        padding: 5px;
+    }
+    .img-panier {
+        max-width: 100%;
+    }
+    .img-champs {
+        max-width: 100%;
+    }
+}
+
+@media(min-width:250px) and (max-width: 779px) {
+    .presentation-restaurant {
+        width: 100%;
+        display: inline-block;
+        justify-content: left;
+        flex-flow: row wrap;
+        max-height: 500px;
+    }
+
+    .niveau1 {
+        font-size: 25px;
+    }
+    .niveau2 {
+        font-size: 20px;
+    }
+    .valeurs{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+    .liste {
+        max-width: 300px;
+    }
+    .titre li {
+        font-size: 20px;
+        text-align: center;
+        padding: 5px;
+    }
+    #img-panier{
+        display: none;
+    }
+    .img {
+        margin-top: 5px;
+        width: 50%;
+        padding: 5px;
+    }
+    .img-champs {
+        width: 100%;
+    }
+}
+
+/* --------------SECTION GALERIE-------------- */
+
+.galerie {
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.section-galerie h2{
+    padding-top: 10px;
+    color: black;
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+}
+
+.galerie li {
+    list-style-type: none;
+    font-family: Hind Madurai, Arial, sans-serif;
+}
+
+.galerie li img {
+    width: 100%;
+    max-height: 120px;
+}
+
+.btn-reservation-galerie{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: saddlebrown;
+    margin-top: 20px;
+}
+
+.reservation-galerie {
+    min-width: 100px;
+    max-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    color: floralwhite;
+    font-size: 23px;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: #906427;
+    font-family: Montserrat, sans-serif;
+}
+
+.titre-plat {
+    font-family: Hind Madurai, Arial, sans-serif;
+    font-size: 16px;
+    color: black;
+    width: 100%;
+    visibility: hidden;
+}
+
+.galerie-item {
+    width: fit-content;
+    position: relative;
+}
+
+.titre-plat {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 10px;
+    background-color: #ffffff40;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+    font-weight: 700;
+    color: #1c1c1c;
+    text-align: center;
+}
+
+.galerie li:hover .titre-plat{
+    visibility: visible;
+}
+
+
+/* --------------SECTION GALERIE RESPONSIVE-------------- */
+
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .titre-plat {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --------------FOOTER-------------- */
+
+.footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #906427;
+}
+
+.titre-horaires h2 {
+    font-family: 'Lora', serif;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+.liste-horaires {
+    padding: 10px ;
+    list-style-type: none;
+    font-family: 'Lora', serif;
+    line-height: 25px;
+}
+
+.liste-horaires li {
+    text-align: center;
+    color: white;
+}
+
+
+
+/* --------------FOOTER RESPONSIVE-------------- */
+
+@media(min-width:250px) and (max-width: 779px) {
+    .titre-horaires h2 {
+        padding-top: 10px;
+        font-size: 15px;
+    }
+    .liste-horaires {
+        padding: 5px ;
+        font-size: 12px;
+    }
+}
+
+/* --------------PAGE CARTE ET MENUS-------------- */
+
+/* --------------SECTION CARTE-------------- */
+
+.section-carte {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+
+}
+
+.item1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    list-style-type: none;
+    line-height: 25px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.item1 h3, .item1 ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.item2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    list-style-type: none;
+    line-height: 25px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.item2 h3, .item2 ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.item3 {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    list-style-type: none;
+    line-height: 25px;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.item1, .item2, .item3 {
+    background-color: saddlebrown;
+}
+
+.item3 h3, .item3 ul{
+    text-align: center;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.section-carte h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
+}
+
+
+.item1 li, .item2 li, .item3 li {
+    padding: 10px;
+    font-family: Hind Madurai, Arial, sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+li .description-plat {
+    font-style: italic;
+}
+
+/* --------------SECTION MENUS-------------- */
+
+.section-menu {
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+
+.choix-menu {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* --------------SECTION CARTE ET MENUS RESPONSIVE-------------- */
+
+@media (max-width: 800px) {
+    .section-carte, .section-menu {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .item1, .item2, .item3 {
+        grid-column: 1 / 2;
+    }
+    .item1 {
+        grid-row: 1/2;
+    }
+    .item2 {
+        grid-row: 2/3;
+    }
+    .item3 {
+        grid-row: 3/4;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

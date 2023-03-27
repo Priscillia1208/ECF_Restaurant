@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1>Plat index</h1>
+    <a href="{{ path('app_admin_plat_new') }}">Create new</a>
 
     <table class="table">
         <thead>
@@ -23,8 +24,9 @@
                 <td>{{ plat.description }}</td>
                 <td>{{ plat.categorie }}</td>
                 <td>
-                    <a href="{{ path('app_admin_plat_show', {'id': plat.id}) }}">show</a>
-                    <a href="{{ path('app_admin_plat_edit', {'id': plat.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_plat_show', {'id': plat.id}) }}">Résumé</a>
+                    <a href="{{ path('app_admin_plat_edit', {'id': plat.id}) }}">Modifier</a>
+                    {{ include('admin_plat/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

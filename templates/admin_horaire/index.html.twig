@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1>Horaire index</h1>
+    <a href="{{ path('app_admin_horaire_new') }}">Créer</a>
 
     <table class="table">
         <thead>
@@ -27,8 +28,9 @@
                 <td>{{ horaire.heureDebutSoir ? horaire.heureDebutSoir|date('H:i:s') : '' }}</td>
                 <td>{{ horaire.heureFinSoir ? horaire.heureFinSoir|date('H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_admin_horaire_show', {'id': horaire.id}) }}">show</a>
-                    <a href="{{ path('app_admin_horaire_edit', {'id': horaire.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_horaire_show', {'id': horaire.id}) }}">Résumé</a>
+                    <a href="{{ path('app_admin_horaire_edit', {'id': horaire.id}) }}">Modifier</a>
+                    {{ include('admin_horaire/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -39,5 +41,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_horaire_new') }}">Create new</a>
+
 {% endblock %}

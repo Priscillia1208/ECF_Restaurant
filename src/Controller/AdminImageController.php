@@ -20,6 +20,7 @@ class AdminImageController extends AbstractController
      */
     public function index(ImageRepository $imageRepository): Response
     {
+
         return $this->render('admin_image/index.html.twig', [
             'images' => $imageRepository->findAll(),
         ]);
@@ -35,7 +36,7 @@ class AdminImageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $someNewFileName = uniqid() . 'jpg';
+            $someNewFileName = uniqid() . '.jpg';
             $file = $form['sourceImage']->getData();
             $file->move('img-dynamique', $someNewFileName);
             $image->setSourceImage($someNewFileName);

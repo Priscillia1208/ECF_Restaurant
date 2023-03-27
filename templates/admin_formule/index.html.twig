@@ -4,6 +4,7 @@
 
 {% block body %}
     <h1>Formule index</h1>
+    <a href="{{ path('app_admin_formule_new') }}">Créer</a>
 
     <table class="table">
         <thead>
@@ -23,8 +24,9 @@
                 <td>{{ formule.prix }}</td>
                 <td>{{ formule.description }}</td>
                 <td>
-                    <a href="{{ path('app_admin_formule_show', {'id': formule.id}) }}">show</a>
-                    <a href="{{ path('app_admin_formule_edit', {'id': formule.id}) }}">edit</a>
+                    <a href="{{ path('app_admin_formule_show', {'id': formule.id}) }}">Résumé</a>
+                    <a href="{{ path('app_admin_formule_edit', {'id': formule.id}) }}">Modifier</a>
+                    {{ include('admin_formule/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
@@ -35,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_formule_new') }}">Create new</a>
+
 {% endblock %}

@@ -1,0 +1,7 @@
+Controller:         intercepte les clics en fonction de la route par la requête http
+
+BDD: entity représente une table
+     repository -> lecture, écriture des entités en BDD
+     entityManagerInterface ->lecture, écriture, en BDD, fonction de bas niveau
+     query et queryBuilder -> requêtes complexes en dql
+

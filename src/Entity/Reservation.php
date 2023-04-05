@@ -58,6 +58,11 @@ class Reservation
      */
     private $nomClient;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nbCouverts;
+
     public function __construct()
     {
         $this->tables = new ArrayCollection();
@@ -176,6 +181,18 @@ class Reservation
     public function setNomClient(string $nomClient): self
     {
         $this->nomClient = $nomClient;
+
+        return $this;
+    }
+
+    public function getNbCouverts(): ?int
+    {
+        return $this->nbCouverts;
+    }
+
+    public function setNbCouverts(int $nbCouverts): self
+    {
+        $this->nbCouverts = $nbCouverts;
 
         return $this;
     }

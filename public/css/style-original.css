@@ -5,6 +5,8 @@
 }
 
 body {
+    width: 1100px;
+    margin: 0 auto;
     font-family: Hind Madurai, Arial, sans-serif;
     background-color: #B6AC97;
 }
@@ -23,7 +25,7 @@ body {
 }
 
 .flex-item {
-    padding: 30px
+    padding: 30px;
 }
 
 .logo {
@@ -33,11 +35,9 @@ body {
     margin-right: 25px;
 }
 
-.lien-navigation a {
-    padding-right: 15px;
+.lien-navigation {
     text-decoration: none;
     cursor: pointer;
-    text-align: center;
     color: floralwhite;
     font-size: 23px;
 }
@@ -62,40 +62,6 @@ a:hover {
 
 /* --------------RESPONSIVE DU HEADER ET DE LA NAVBAR-------------- */
 
-@media screen and (min-width: 780px) and (max-width: 1120px){
-        .navigation {
-            flex-flow: row wrap;
-            max-height: 150px;
-    }
-        .lien-navigation {
-            padding: 10px;
-        }
-}
-
-@media(min-width:250px) and (max-width: 779px){
-    .navigation {
-        display: flex;
-        justify-content: center;
-        flex-flow: row wrap;
-        max-height: 130px;
-    }
-    .logo {
-        margin-right: 2px;
-        margin-bottom: 3px;
-    }
-    .lien-navigation{
-       width: auto;
-        margin-left: 5px;
-        padding: 0;
-    }
-    .lien-navigation a {
-        font-size: 15px;
-    }
-    .btn-reservation {
-        font-size: 15px;
-        margin-top: 3px;
-    }
-}
 
 /* --------------SECTION PRESENTATION RESTAURANT-------------- */
 .container-section {
@@ -460,14 +426,17 @@ li .description-plat {
 
 /* --------------SECTION MENUS-------------- */
 
+
 .section-menu {
     width: 100%;
     margin-top: 20px;
     padding: 0 20px;
+    /*
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-gap: 10px;
+    grid-gap: 10px;*/
+    display: flex;
 }
 
 .choix-menu {
@@ -475,10 +444,11 @@ li .description-plat {
     font-weight: bold;
 }
 
+
 /* --------------SECTION CARTE ET MENUS RESPONSIVE-------------- */
 
 @media (max-width: 800px) {
-    .section-carte, .section-menu {
+    .section-carte {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
     }
@@ -495,6 +465,11 @@ li .description-plat {
         grid-row: 3/4;
     }
 }
+
+/* --------------SECTION RESERVATION VISITEURS-------------- */
+
+
+
 
 
 

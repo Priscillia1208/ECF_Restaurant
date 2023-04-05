@@ -4,7 +4,9 @@ namespace App\Repository;
 
 use App\Entity\Table;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\AbstractQuery;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\VarExporter\Internal\Hydrator;
 
 /**
  * @extends ServiceEntityRepository<Table>
@@ -37,6 +39,27 @@ class TableRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * Renvoit le tableau des tables non réservées pour cette date ou dont la résa est annulée
+     * @param \DateTime $dateEtHeure
+     * @return float|int|mixed|string
+     */
+    public function listeTablesDispoParNbCouvertsCroissant (\DateTime $dateDebut, \DateTime $dateFin){
+
+        // Récupère ttes les tables non réservées pour cette date OU dt résa est annulée
+        $dql = "SELECT  t 
+                FROM    App:Table t 
+                        LEFT JOIN t.reservations r 
+                WHERE   (r.etat='ANNULE' AND r.dateEtHeureArrivee BETWEEN :DEBUT AND :FIN) 
+                        OR r IS NULL
+                ORDER BY t.nbPlaces";
+        $query = $this->getEntityManager()->createQuery($dql);
+        $query->setParameter("DEBUT", $dateDebut);
+        $query->setParameter("FIN", $dateFin);
+
+        return $query->getResult();
     }
 
 //    /**

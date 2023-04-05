@@ -1,0 +1,110 @@
+{% extends 'base-visiteur.html.twig' %}
+
+{% block title %}Réservation{% endblock %}
+
+
+
+
+{% block body %}
+
+    {{ form_start(formulaire) }}
+
+    <div class="container mt-3">
+        <h1 style="text-align: center">Réservations en ligne: </h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-3 mb-3">
+                    <h4>{{ form_row(formulaire.nbCouverts) }}</h4>
+            </div>
+            <div class="col-2 mb-3">
+                    <h4>{{ form_row(formulaire.dateEtHeureArrivee) }}</h4>
+            </div>
+            <div class="col-5 mb-3">
+                    <h4>{{ form_row(formulaire.nomClient) }}</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row justify-content-center mt-4">
+            <div class="col-3 mb-3">
+                    <h4>{{ form_row(formulaire.allergenes) }}</h4>
+            </div>
+            <div class="col-6 mb-3">
+                    <h4>{{ form_row(formulaire.commentaire) }}</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row align-items-center">
+            <button class="btn" style="background-color: #8B4513; color:white; font-size: 20px" type="submit">Valider</button>
+        </div>
+    </div>
+<!--
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+
+    </div>-->
+    {{ form_end(formulaire) }}
+<!--
+        <div class="container mt-3">
+            <h1>Réservations en ligne: </h1>
+            <div class="row align-items-center mt-4" id="heureMidi">
+                <div class="col-3">
+                    <div class="mb-3">
+                        <label for="nbCouverts" class="form-label"><h4>Nombre de couverts:</h4></label>
+                        <input type="text" class="form-control" id="nbCouverts" aria-describedby="nombre de couverts" placeholder="Indiquez le nombre de couverts">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="mb-3">
+                        <label for="date" class="form-label"><h4>Date:</h4></label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h4>Midi:</h4>
+            <div class="row align-items-center mb-4">
+                {% for heureReservationMidi in heuresReservationMidi%}
+                <div class="col">
+                    <input type="text" class="form-control heureReservation" value="{{ heureReservationMidi}}" readonly>
+                </div>
+                {% endfor %}
+            </div>
+            <h4>Soir:</h4>
+            <div class="row">
+                {% for heureReservationSoir in heuresReservationSoir%}
+                    <div class="col">
+                        <input type="text" class="form-control" value="{{ heureReservationSoir }}" readonly>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    <div class="container mt-3">
+        <h4>Vos allergies: </h4>
+        <div class="row align-items-center mt-4">
+            <div class="col-3">
+                <div class="mb-3">
+                    <label for="allergies" class="form-label"></label>
+                    <input type="textarea" class="form-control" id="allergies" aria-describedby="allergies" placeholder="Indiquez vos allergies">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+         <div class="row align-items-center">
+            <button class="btn btn-primary" type="submit">Valider</button>
+        </div>
+    </div>-->
+
+
+
+{% endblock %}

@@ -1,38 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#8B4513;">
-
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #dfdfdf;" href="{{ path('app_admin_formule_index') }}">Formules</a>
+                    <a class="nav-link" href="{{ path('app_admin_formule_index') }}">Formules</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #dfdfdf;" href="{{ path('app_admin_horaire_index') }}">Horaires</a>
+                    <a class="nav-link" href="{{ path('app_admin_horaire_index') }}">Horaires</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #dfdfdf;" href="{{ path('app_admin_image_index') }}">Images</a>
+                    <a class="nav-link" href="{{ path('app_admin_image_index') }}">Images</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: #dfdfdf;" href="{{ path('app_admin_plat_index') }}">Plats</a>
+                    <a class="nav-link" href="{{ path('app_admin_plat_index') }}">Plats</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;"href="{{ path('app_admin_reservation_index') }}">Réservations</a>
+                    <a class="nav-link" href="{{ path('app_admin_reservation_index') }}">Réservations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;"href="{{ path('app_admin_table_index') }}">Table</a>
+                    <a class="nav-link" href="{{ path('app_admin_table_index') }}">Table</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;" href="{{ path('app_admin_allergene_index') }}">Allergènes</a>
+                    <a class="nav-link" href="{{ path('app_admin_allergene_index') }}">Allergènes</a>
                 </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;" href="{{ path('app_register') }}">Inscription</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;" href="{{ path('app_login') }}">Connexion</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"  style="color: #dfdfdf;" href="{{ path('app_logout') }}">Deconnexion</a>
+                    <a class="nav-link deconnexion" href="{{ path('app_logout') }}">Deconnexion</a>
                 </li>
 
             </ul>

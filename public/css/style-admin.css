@@ -1,0 +1,43 @@
+.navbar-nav{
+    width: 100%;
+    display: flex;
+}
+
+.nav-item{
+    margin: 5px 10px;
+}
+
+.nav-link {
+    color: #dfdfdf;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.deconnexion{
+    text-decoration: underline;
+    color: cyan;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    background-color: #906427;
+}
+
+.creer {
+    margin-top: 20px;
+}
+
+.btn-creer {
+    text-decoration: none;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #8B4513;
+    color: #dfdfdf;
+    cursor: pointer;
+    text-transform: uppercase;
+    min-width: 135px;
+}

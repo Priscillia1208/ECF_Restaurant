@@ -24,22 +24,22 @@ class Horaire
     private $jourSemaine;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     private $heureDebutMatin;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     private $heureFinMatin;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     private $heureDebutSoir;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      */
     private $heureFinSoir;
 
@@ -65,7 +65,7 @@ class Horaire
         return $this->heureDebutMatin;
     }
 
-    public function setHeureDebutMatin(\DateTimeInterface $heureDebutMatin): self
+    public function setHeureDebutMatin(?\DateTimeInterface $heureDebutMatin): self
     {
         $this->heureDebutMatin = $heureDebutMatin;
 
@@ -77,7 +77,7 @@ class Horaire
         return $this->heureFinMatin;
     }
 
-    public function setHeureFinMatin(\DateTimeInterface $heureFinMatin): self
+    public function setHeureFinMatin(?\DateTimeInterface $heureFinMatin): self
     {
         $this->heureFinMatin = $heureFinMatin;
 
@@ -89,7 +89,7 @@ class Horaire
         return $this->heureDebutSoir;
     }
 
-    public function setHeureDebutSoir(\DateTimeInterface $heureDebutSoir): self
+    public function setHeureDebutSoir(?\DateTimeInterface $heureDebutSoir): self
     {
         $this->heureDebutSoir = $heureDebutSoir;
 
@@ -101,12 +101,14 @@ class Horaire
         return $this->heureFinSoir;
     }
 
-    public function setHeureFinSoir(\DateTimeInterface $heureFinSoir): self
+    public function setHeureFinSoir(?\DateTimeInterface $heureFinSoir): self
     {
         $this->heureFinSoir = $heureFinSoir;
 
         return $this;
     }
+
+
 
 
 

@@ -17,6 +17,7 @@ class ReservationType extends AbstractType
     {
         $builder
             ->add('dateEtHeureArrivee', null, ['widget'=>'single_text'])
+            ->add('nbCouverts')
             ->add('etat', ChoiceType::class,
                 [
                 'required' => false,

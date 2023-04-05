@@ -43,37 +43,18 @@
 
     <!----------------SECTION MENUS-------------->
 
+
     <div class="container-carte-menu">
         <section class="section-menu">
+            {% for formule in formules %}
             <div class="item1">
                 <ul>
-                    <li><h3>MENU CLASSIQUE (une entrée, un plat, un dessert) : 55€</h3></li>
-                    <li class="choix-menu">Entrées : </li>
-                    <li>Salade d’artichauts violets, topinambours et copeaux de parmesan</li>
-                    <li>King crabe et avocat</li>
-                    <li class="choix-menu">Plats : </li>
-                    <li>Dos de cabillaud vapeur, beurre de champignons et poireaux à la crème de cardamome</li>
-                    <li>Pot-au-feu de volaille à la truffe tuber melanosporum</li>
-                    <li class="choix-menu">Desserts : </li>
-                    <li>Finger chocolat, croustillant praliné</li>
-                    <li>Tarte fine croustillante aux pommes et glace miel</li>
+                    <li class="choix-menu"><h3>{{ formule.nom }}</h3></li>
+                    <li>{{ formule.prix ~ ' €'}}</li>
+                    <li>{{ formule.description}}</li>
                 </ul>
             </div>
-
-
-            <div class="item2">
-                <ul>
-                    <li><h3>MENU DEGUSTATION: 80€</h3></li>
-                    <li class="choix-menu">Entrée: </li>
-                    <li>COQUILLES SAINT JACQUES "Saint Brieuc côtes Bretonnes" Fraîchement décoquillées / Asperges & Pois gourmand, Emulsion d'eau des coquillages</li>
-                    <li class="choix-menu">Plat : </li>
-                    <li>COMPRESSE DE PALERON longuement confit dans l'esprit " Boeuf - Carotte", Pommes de terre Agria / jus de daube réduit</li>
-                    <li class="choix-menu">Dessert : </li>
-                    <li>CREATIONS GOURMANDES : Desserts de notre carte</li>
-                </ul>
-            </div>
+            {% endfor %}
         </section>
     </div>
-
-
 {% endblock %}
